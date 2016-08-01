@@ -150,7 +150,7 @@ class Registration
                 header('location:error.php');
             } else {
                 try {
-                    $query = $this->conn->prepare("UPDATE `tbl_users` SET `is_active` = '1' WHERE `tbl_users`.`verification_id` = '" . $_GET['vid'] . "'");
+                    $query = $this->conn->prepare("UPDATE `tbl_users` SET `is_active` = '1' WHERE `tbl_users`.`verification_id` = '" . $_GET['id'] . "'");
                     $query->execute();
                     $_SESSION['success'] = "Registration Process Compleated. Now Login."."<br/>";
                     header('location:login.php');
