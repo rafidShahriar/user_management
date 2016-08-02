@@ -136,7 +136,18 @@ class Registration
 		}
 		
 	}
+	
+	public function mailVerification()
+	{
+		$to = "somebody@example.com";
+		$subject = "Email Verification.";
+		$txt = "<a href="active.php?id=<?php echo $_GET['id']; ?>" target="_blank">Click here...</a>for email verification and complete the registration.";
+		$headers = "From: webmaster@example.com" . "\r\n" .
+		"CC: somebodyelse@example.com";
 
+		mail($to,$subject,$txt,$headers);
+	}
+	
 	public function active()
 	{
 		$vid = $this->conn->query("SELECT * FROM `tbl_users` WHERE `verification_id` = '".$_GET['id']."'");
