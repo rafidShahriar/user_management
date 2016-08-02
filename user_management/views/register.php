@@ -6,6 +6,6 @@
 </head>
 <body>
 	<h3>Thanks for registration</h3>
-	<a href="active.php">Click here...</a>for email verification and complete the registration.
+	<a href="active.php?id=<?php echo $_GET['id'];?>">Click here...</a>for email verification and complete the registration.
 </body>
 </html>
